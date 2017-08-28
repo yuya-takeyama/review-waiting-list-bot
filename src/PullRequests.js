@@ -39,7 +39,10 @@ class PullRequests {
   }
 
   formatPullRequest(pr, index) {
-    return `${index+1}. \`${pr.title}\` ${pr.html_url} by ${pr.user.login}`
+    return {
+      text: `${index+1}. \`${pr.title}\` ${pr.html_url} by ${pr.user.login}`,
+      link_names: 0,
+    }
   }
 
   convertToSlackMessages() {
